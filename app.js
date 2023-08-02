@@ -22,7 +22,7 @@ app.use(requestLogger);
 
 app.use(errors());
 
-app.use('/api/', routes);
+app.use('/api', routes);
 app.use(errorLogger);
 
 app.use(errorHandler);
