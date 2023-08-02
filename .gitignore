@@ -27,7 +27,7 @@ node_modules
 
 # production
 /build
-builds
+build
 
 # misc
 .env

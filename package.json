@@ -2,7 +2,7 @@
   "name": "movies-explorer-api",
   "version": "1.0.0",
   "description": "Diploma",
-  "main": "\u001b[D\u001b[D\u001b[D\u001bapp\u001b[3~\u001b[3~\u001b[3~",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
     "lint": "npx eslint .",
@@ -25,8 +25,9 @@
     "winston": "^3.10.0"
   },
   "devDependencies": {
-    "eslint": "^8.2.0",
+    "eslint": "^8.46.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.2"
+    "eslint-plugin-import": "^2.28.0",
+    "nodemon": "^3.0.1"
   }
 }
