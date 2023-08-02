@@ -1,5 +1,9 @@
 const allowedCors = [
-
+  'https://pr-movies.nomoreparties.co',
+  'http://pr-movies.nomoreparties.co',
+  // 'https://pr-movies-explorer.nomoreparties.co',
+  // 'http://pr-movies-explorer.nomoreparties.co',
+  'localhost:3000',
 ];
 
 module.exports = (req, res, next) => {
