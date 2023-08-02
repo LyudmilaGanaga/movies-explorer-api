@@ -8,6 +8,7 @@
     "lint": "npx eslint .",
     "start": "node app.js"
   },
+  "keywords": [],
   "author": "Mila Ganaga",
   "license": "ISC",
   "dependencies": {
@@ -20,7 +21,6 @@
     "helmet": "^7.0.0",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.1",
-    "nodemon": "^3.0.1",
     "validator": "^13.9.0",
     "winston": "^3.10.0"
   },
