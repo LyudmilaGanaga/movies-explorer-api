@@ -1,7 +1,7 @@
 const allowedCors = [
   'https://pr-movies.nomoreparties.co',
   'http://pr-movies.nomoreparties.co',
-  'localhost:3000',
+  'http://localhost:3000',
 ];
 
 module.exports = (req, res, next) => {
@@ -10,15 +10,15 @@ module.exports = (req, res, next) => {
   const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
   const requestHeaders = req.headers['access-control-request-headers'];
 
-  if (method === 'OPTIONS') {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
-    res.header('Access-Control-Allow-Headers', requestHeaders);
-    return res.end();
+  if (allowedCors.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
   }
 
-  if (allowedCors.includes(origin)) {
-    res.header('Access-Control-Allow-Origin', '*');
+  if (method === 'OPTIONS') {
+    res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
+    res.header('Access-Control-Allow-Headers', requestHeaders);
+
+    return res.status(200).send();
   }
 
   return next();
