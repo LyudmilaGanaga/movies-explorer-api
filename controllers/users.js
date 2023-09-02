@@ -92,7 +92,9 @@ const updateUser = (req, res, next) => {
     .then((user) => res.status(200).send(user))
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
-        next(new BadRequest('Плохой запрос'));
+        next(new BadRequest('BadRequest'));
+      } else if (err.name === 'MongoServerError' && err.code === 11000) {
+        next(new Conflict('Пользователь с таким email уже существует'));
       } else {
         next(err);
       }
